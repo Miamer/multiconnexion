@@ -40,11 +40,14 @@ function App() {
       .auth()
       .signInWithPopup(provider)
       .then(async (result) => {
+        const idTokenResult = await firebase
+            .auth()
+            .currentUser.getIdTokenResult();
         let user = await firebase.auth().currentUser;
         setUserdata({
           name: user.displayName,
           email: user.email,
-          token: user.token,
+          token: idTokenResult.token,
           uid: user.iud,
         });
         console.log(user);
