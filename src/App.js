@@ -94,7 +94,7 @@ function App() {
           userLogin();
         }}
       >
-        Connexion LoginMdp
+        Connexion Login/Mdp
       </button>
 
       <p>-----------------------------</p>
